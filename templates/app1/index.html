@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{% static 'app1/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'app1/css/bootstrap.css' %}">
+    <style>
+        button{
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+                <h1>Home Page</h1>
+                <button class="btn btn-outline-primary">
+                    This button is styled by using bootstrap5
+                </button>
+
+                <p>Demo of Dynamic Urls</p>
+               {% for student in list %}
+                    <a href="{% url 'static_url' student %}"><button class="btn btn-outline-secondary col-1">{{ student }}</button></a>
+                    <br>
+                {% endfor %}
+</body>
+</html>
